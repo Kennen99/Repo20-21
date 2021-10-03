@@ -1,0 +1,339 @@
+<html>
+<head>
+    <title>
+        <h2>QWERTY keyboard</h2>
+    </title>
+    <style>
+        .display {
+            border: 5px solid grey;
+            height: 200px;
+            width: 50%;
+            margin:auto;
+        }
+        .keyboard{
+            width: 100%;
+        }
+        button {
+            width:80px;
+            height: 50px;
+            color: white;
+            background-color: black;
+        }
+        .numbers{            
+            width:100%;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .row1{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .backspace {
+            position:relative;
+        }
+        .row2_capslock{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .row3_shift{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .space_ok{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="display" class="display">TEXT AREA</div>
+    <div class="keyboard">
+        <!--numbers and row1 have backspace together-->
+        <div class="numbers">
+            <button id="B1">1</button>
+            <button id="B2">2</button>
+            <button id="B3">3</button>
+            <button id="B4">4</button>
+            <button id="B5">5</button>
+            <button id="B6">6</button>
+            <button id="B7">7</button>
+            <button id="B8">8</button>
+            <button id="B9">9</button>
+            <button id="B0">0</button>
+            <button id="BBackSpace">Back Space</button>
+        </div>
+
+        <div class="row1">
+            <button id="Bq">q</button>
+            <button id="Bw">w</button>
+            <button id="Be">e</button>
+            <button id="Br">r</button>
+            <button id="Bt">t</button>
+            <button id="By">y</button>
+            <button id="Bu">u</button>
+            <button id="Bi">i</button>
+            <button id="Bo">o</button>
+            <button id="Bp">p</button>
+        </div>
+<!--
+        <div class="backspace">
+            <button id="BBackSpace">Back Space</button>
+        </div>
+-->
+        <div class="row2_capslock">
+            <button id="Ba">a</button>
+            <button id="Bs">s</button>
+            <button id="Bd">d</button>
+            <button id="Bf">f</button>
+            <button id="Bg">g</button>
+            <button id="Bh">h</button>
+            <button id="Bj">j</button>
+            <button id="Bk">k</button>
+            <button id="Bl">l</button>
+            <button id="BCapsLock" class="BCapsLock">Caps Lock</button>
+        </div>  
+
+        <div class="row3_shift">
+            <button id="Bz">z</button>
+            <button id="Bx">x</button>
+            <button id="Bc">c</button>
+            <button id="Bv">v</button>
+            <button id="Bb">b</button>
+            <button id="Bn">n</button>
+            <button id="Bm">m</button>
+            <button id="Bline">-</button>
+            <button id="Bunderline">_</button>
+            <button id="BShift">Shift</button>
+        </div>
+
+        <div class="space_ok">
+            <button id="BSpace">Space</button>
+            <button id="BOk">OK</button>
+        </div>
+    </div>
+
+    <script>
+        var display = document.getElementById("display");
+        var B1 = document.getElementById("B1");
+        var B2 = document.getElementById("B2");
+        var B3 = document.getElementById("B3");
+        var B4 = document.getElementById("B4");
+        var B5 = document.getElementById("B5");
+        var B6 = document.getElementById("B6");
+        var B7 = document.getElementById("B7");
+        var B8 = document.getElementById("B8");
+        var B9 = document.getElementById("B9");
+        var B0 = document.getElementById("B0");
+        var Bq = document.getElementById("Bq");
+        var Bw = document.getElementById("Bw");
+        var Be = document.getElementById("Be");
+        var Br = document.getElementById("Br");
+        var Bt = document.getElementById("Bt");
+        var Bz = document.getElementById("Bz");
+        var Bu = document.getElementById("Bu");
+        var Bi = document.getElementById("Bi");
+        var Bo = document.getElementById("Bo");
+        var Bp = document.getElementById("Bp");
+        var BBackSpace = document.getElementById("BBackSpace");
+
+        
+        /*
+        var dugme = [B1,B2,B3,B4,B5,B6,B7,B8,B9,B9,B0];
+        var unos = [1,2,3,4,5,6,7,8,9,0];
+        function BF(x){
+            display.innerHTML = temp + x;
+            temp += x;
+        }
+        dugme[i].onclick = function(){
+            BF(unos[i];)
+        }
+        */
+        var temp = "";
+        var capslock = false;
+        var shift = false;
+        // realizacija unosa brojeva
+        
+        function brojevi(x){
+            display.innerHTML = temp + x;
+            temp += x;
+        }
+
+        B1.onclick = function(){
+            brojevi(1);
+        };
+        B2.onclick = function(){
+            brojevi(2);
+        };
+        B3.onclick = function(){
+            brojevi(3);
+        };
+        B4.onclick = function(){
+            brojevi(4);
+        };
+        B5.onclick = function(){
+            brojevi(5);
+        };
+        B6.onclick = function(){
+            brojevi(6);
+        };
+        B7.onclick = function(){
+            brojevi(7);
+        };
+        B8.onclick = function(){
+            brojevi(8);
+        };
+        B9.onclick = function(){
+            brojevi(9);
+        };
+        B0.onclick = function(){
+            brojevi(0);
+        };
+        // function for letters
+        function slova(x){
+            if(shift===true && capslock===true){
+                shift=false;
+            }
+            else if(shift===true || capslock===true){
+                shift=false;
+                x = x.toUpperCase();
+            }
+            display.innerHTML = temp + x;
+            temp += x;
+        }
+        // first row letters and backspace
+        Bq.onclick = function(){
+            slova("q");
+        };
+        Bw.onclick = function(){
+            slova("w");
+        };
+        Be.onclick = function(){
+            slova("e");
+        };
+        Br.onclick = function(){
+            slova("r");
+        };
+        Bt.onclick = function(){
+            slova("t");
+        };
+        By.onclick = function(){
+            slova("z");
+        };
+        Bu.onclick = function(){
+            slova("u");
+        };
+        Bi.onclick = function(){
+            slova("i");
+        };
+        Bo.onclick = function(){
+            slova("o");
+        };
+        Bp.onclick = function(){
+            slova("p");
+        };
+        function BBackSpaceF(){
+            temp = temp.substring(0, temp.length-1);
+            display.innerHTML = temp;
+        }
+        BBackSpace.onclick = function(){
+            BBackSpaceF();
+        };
+        // second row letters and capslock
+        Ba.onclick = function(){
+            slova("a");
+        };
+        Bs.onclick = function(){
+            slova("s");
+        };
+        Bd.onclick = function(){
+            slova("d");
+        };
+        Bf.onclick = function(){
+            slova("f");
+        };
+        Bg.onclick = function(){
+            slova("g");
+        };
+        Bh.onclick = function(){
+            slova("h");
+        };
+        Bj.onclick = function(){
+            slova("j");
+        };
+        Bk.onclick = function(){
+            slova("k");
+        };
+        Bl.onclick = function(){
+            slova("l");
+        };
+        BCapsLock.onclick = function(){
+            if(capslock===true){
+                capslock=false;
+            } else{
+                capslock=true;
+            }
+        };
+        // third row letters and -, _, Shift
+        Bz.onclick = function(){
+            slova("z");
+        };
+        Bx.onclick = function(){
+            slova("x");
+        };
+        Bc.onclick = function(){
+            slova("c");
+        };
+        Bv.onclick = function(){
+            slova("v");
+        };
+        Bb.onclick = function(){
+            slova("b");
+        };
+        Bn.onclick = function(){
+            slova("n");
+        };
+        Bm.onclick = function(){
+            slova("m");
+        };
+        Bline.onclick = function(){
+            display.innerHTML = temp + "-";
+            temp += "-";
+        };
+        Bunderline.onclick = function(){
+            display.innerHTML = temp + "_";
+            temp += "_";
+        };
+        BShift.onclick = function(){
+            if(shift===true){
+                shift=false;
+            } else{
+                shift=true;
+            }
+        };
+        // space and ok
+        BSpace.onclick = function(){
+            display.innerHTML = temp + " ";
+            temp += " ";
+            if(shift===true){
+                shift=false;
+            }
+        }
+        BOk.onclick = function(){
+            
+        }
+    </script>
+    
+</body>
+</html>
