@@ -1,77 +1,4 @@
-<html>
-<head>
-    <title>
-        <h2>QWERTY keyboard</h2>
-    </title>
-    <link rel="stylesheet" href="index.css">
-    <script src="../src/index.js"></script>
-</head>
-<body>
-    <form>
-        <div id="display" class="display">TEXT AREA</div>
-    </form>
-    <div class="keyboard">
-        <!--numbers and row1 have backspace together-->
-        <div class="numbers">
-            <button id="B1">1</button>
-            <button id="B2">2</button>
-            <button id="B3">3</button>
-            <button id="B4">4</button>
-            <button id="B5">5</button>
-            <button id="B6">6</button>
-            <button id="B7">7</button>
-            <button id="B8">8</button>
-            <button id="B9">9</button>
-            <button id="B0">0</button>
-            <button id="BBackSpace">Back Space</button>
-        </div>
-
-        <div class="row1">
-            <button id="Bq">q</button>
-            <button id="Bw">w</button>
-            <button id="Be">e</button>
-            <button id="Br">r</button>
-            <button id="Bt">t</button>
-            <button id="By">y</button>
-            <button id="Bu">u</button>
-            <button id="Bi">i</button>
-            <button id="Bo">o</button>
-            <button id="Bp">p</button>
-        </div>
-
-        <div class="row2_capslock">
-            <button id="Ba">a</button>
-            <button id="Bs">s</button>
-            <button id="Bd">d</button>
-            <button id="Bf">f</button>
-            <button id="Bg">g</button>
-            <button id="Bh">h</button>
-            <button id="Bj">j</button>
-            <button id="Bk">k</button>
-            <button id="Bl">l</button>
-            <button id="BCapsLock" class="BCapsLock">Caps Lock</button>
-        </div>  
-
-        <div class="row3_shift">
-            <button id="Bz">z</button>
-            <button id="Bx">x</button>
-            <button id="Bc">c</button>
-            <button id="Bv">v</button>
-            <button id="Bb">b</button>
-            <button id="Bn">n</button>
-            <button id="Bm">m</button>
-            <button id="Bline">-</button>
-            <button id="Bunderline">_</button>
-            <button id="BShift">Shift</button>
-        </div>
-
-        <div class="space_ok">
-            <button id="BSpace">Space</button>
-            <button id="BOk" type="submit" form="display">OK</button>
-        </div>
-    </div>
-    <script>
-        var display = document.getElementById("display");        
+        var display = document.getElementById("display");
         /*
         var dugme = [B1,B2,B3,B4,B5,B6,B7,B8,B9,B9,B0];
         var unos = [1,2,3,4,5,6,7,8,9,0];
@@ -256,6 +183,3 @@
         BOk.onclick = function(){
             
         }
-    </script>
-</body>
-</html>
